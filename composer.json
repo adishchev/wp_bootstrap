@@ -1,0 +1,67 @@
+{
+    "name": "adishchev/wordpress",
+    "type": "project",
+    "keywords": [
+        "WordPress",
+        "Composer",
+        "bootstrap"
+    ],
+    "authors": [
+        {
+            "name": "Viacheslav Adishchev",
+            "email": "adischev@gmail.com"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "*",
+        "vlucas/phpdotenv": "*",
+        "koodimonni-language/core-ru_ru": "*",
+        "wpackagist-plugin/google-tag-manager": "*",
+        "wpackagist-plugin/google-sitemap-generator": "*",
+        "wpackagist-plugin/shortcodes-ultimate": "*",
+        "wpackagist-plugin/memcached": "*"
+    },
+    "repositories": {
+        "wp-core": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        "wp-languages": {
+            "type": "composer",
+            "url": "https://wp-languages.github.io"
+        }
+
+    },
+    "extra": {
+        "wordpress-install-dir": "public/wp",
+        "installer-paths": {
+            "public/wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "public/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "public/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "dropin-paths": {
+            "public/wp-content/languages/": [
+                "vendor:koodimonni-language"
+            ],
+            "public/wp-content/": [
+                "package:wpackagist-plugin/memcached:object-cache.php"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "mkdir -p public/wp-content/uplouds && sudo chown -R nginx public/wp-content/uplouds"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true,
+            "koodimonni/composer-dropin-installer": true
+        }
+    }
+}

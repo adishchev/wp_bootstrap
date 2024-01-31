@@ -1,0 +1,13 @@
+# Application
+/public/wp-content/*
+!public/wp-content/plugins/.gitkeep
+!public/wp-content/themes/.gitkeep
+!public/wp-content/uploads/.gitkeep
+
+.env
+
+# WordPress
+public/wp
+
+# Composer
+/vendor
