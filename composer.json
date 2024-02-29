@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "johnpbloch/wordpress": "*",
+        "roots/wordpress": "*",
         "vlucas/phpdotenv": "*",
         "koodimonni-language/core-ru_ru": "*",
         "wpackagist-plugin/google-tag-manager": "*",
@@ -60,7 +60,7 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "johnpbloch/wordpress-core-installer": true,
+            "roots/wordpress-core-installer": true,
             "koodimonni/composer-dropin-installer": true
         }
     }
