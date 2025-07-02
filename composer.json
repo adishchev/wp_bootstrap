@@ -29,8 +29,12 @@
         "wp-languages": {
             "type": "composer",
             "url": "https://wp-languages.github.io"
+        },
+        "elementor-pro": {
+             "type": "composer",
+             "url": "https://composer.elementor.com",
+             "only": ["elementor/elementor-pro"]
         }
-
     },
     "extra": {
         "wordpress-install-dir": "public/wp",
