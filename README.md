@@ -1,14 +1,22 @@
-# To create new project
+#  How to use
 ```console
 git clone https://github.com/adishchev/wp_bootstrap.git <DIR>
 cd <DIR>/ && rm -rf .git/
-composer install
+cp .env.example .env
 ```
-# To install a plugin, use this format:
+## Define your variables
+```console
+vim .env
+```
+## Install dependencies
+```console
+composer install --no-dev
+```
+## To install a plugin use this format:
 ```console
 composer require "wpackagist-plugin/the-events-calendar:*"
 ```
-# To install a theme, use this format:
+## To install a theme use this format:
 ```console
 composer require "wpackagist-theme/:"
 ```
